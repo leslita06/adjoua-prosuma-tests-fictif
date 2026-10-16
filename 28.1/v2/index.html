@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FICTIF | Tableau de bord du recrutement | Groupe Prosuma (test)</title>
+<style>
+:root{--bleu:#31348e;--jaune:#fecc00;--gris:#f4f5fa;--txt:#1f2240;--rouge:#c0392b;--vert:#1e7d4f}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+body{font-family:"Segoe UI",Roboto,"DejaVu Sans",Arial,sans-serif;color:var(--txt);background:#fff;font-size:15px;line-height:1.45}
+.fictif{background:repeating-linear-gradient(45deg,#fecc00 0 18px,#ffd83a 18px 36px);color:#1f2240;font-weight:800;text-align:center;padding:10px 12px;letter-spacing:.3px;border-bottom:3px solid #31348e;font-size:14px}
+.fictif span{display:inline-block;background:#c0392b;color:#fff;padding:2px 8px;border-radius:4px;margin-right:6px}
+header{display:flex;align-items:center;gap:28px;padding:18px 24px;background:#fff;border-bottom:6px solid var(--bleu);flex-wrap:wrap}
+header img{width:170px;height:auto;flex:none}
+header h1{margin:0;font-size:24px;color:var(--bleu)}
+header p{margin:4px 0 0;color:#555;font-size:14px}
+main{max-width:1180px;margin:0 auto;padding:18px 20px 40px}
+h2{color:var(--bleu);font-size:19px;margin:28px 0 10px;padding-left:10px;border-left:6px solid var(--jaune)}
+.note{font-size:13px;color:#555}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--gris);border-top:5px solid var(--bleu);border-radius:8px;padding:10px 12px}
+.kpi b{display:block;font-size:28px;color:var(--bleu)}
+.kpi small{font-size:12.5px;color:#444}
+.kpi.alert{border-top-color:var(--rouge)}.kpi.alert b{color:var(--rouge)}
+.kpi.warn{border-top-color:var(--jaune)}
+.check{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:13.5px;font-weight:600}
+.check.ok{background:#e6f4ec;color:var(--vert);border:1px solid #b6dfc8}
+.check.ko{background:#fdecea;color:var(--rouge);border:1px solid #f3b8b1}
+.real{background:#eef0fb;border:1px solid #c9cdee;border-radius:8px;padding:10px 14px;font-size:13.5px}
+.real a{color:var(--bleu)}
+.funnel .row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.funnel .lab{width:190px;flex:none;font-size:13.5px}
+.funnel .bar{height:22px;background:var(--bleu);border-radius:4px;min-width:3px}
+.funnel .bar.ecart{background:#9aa0c9}
+.funnel .n{font-weight:700;font-size:13.5px;white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;background:var(--gris);padding:10px 12px;border-radius:8px}
+.filters label{font-size:12.5px;font-weight:600;display:flex;flex-direction:column;gap:3px}
+.filters input[type=checkbox]{min-width:0;width:auto;margin:0 6px 0 0}
+.filters label.cb{flex-direction:row;align-items:center;padding-bottom:8px}
+.filters select,.filters input[type=text],.filters input:not([type]){font:inherit;font-size:14px;padding:6px 8px;border:1px solid #b9bcd8;border-radius:5px;min-width:170px;max-width:100%}
+.filters button,.btn{font:inherit;font-size:13.5px;background:var(--bleu);color:#fff;border:0;border-radius:5px;padding:7px 12px;cursor:pointer}
+.btn.j{background:var(--jaune);color:var(--txt);font-weight:700}
+#count{font-size:13px;margin:8px 2px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--bleu);color:#fff;text-align:left;padding:8px;cursor:pointer;user-select:none;white-space:nowrap}
+th .ar{color:var(--jaune);margin-left:4px}
+td{padding:7px 8px;border-bottom:1px solid #e1e3ef;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfe}
+tr.late td{background:#fff4f2}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:12px;font-weight:600;white-space:nowrap}
+.t-pre{background:#e7e8f6;color:var(--bleu)}.t-ent{background:#fff3c2;color:#6b5400}.t-eva{background:#dff0ff;color:#0d4d80}.t-off{background:#e6f4ec;color:var(--vert)}.t-ecp{background:#eee;color:#555}
+.late-b{color:var(--rouge);font-weight:700;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.card{border:1px solid #d8dbee;border-left:6px solid var(--rouge);border-radius:8px;padding:10px 12px;font-size:13.5px}
+.card.dec{border-left-color:#9aa0c9}
+.card h4{margin:0 0 4px;font-size:14px;color:var(--bleu)}
+.st{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;color:var(--rouge);border:1px dashed var(--rouge);padding:1px 6px;border-radius:4px}
+.suite{background:var(--gris);border-radius:10px;padding:14px 16px;border:2px solid var(--bleu)}
+pre#point{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;border:1px solid #d8dbee;border-radius:6px;padding:12px;font-family:inherit;font-size:13.5px;margin:10px 0}
+.hyp li{margin:3px 0;font-size:13.5px}
+footer{border-top:6px solid var(--bleu);padding:14px 20px;font-size:12.5px;color:#555;text-align:center}
+@media (max-width:760px){
+ header{padding:14px;gap:14px}header img{width:130px}header h1{font-size:19px}
+ main{padding:12px}
+ .funnel .lab{width:130px;font-size:12.5px}
+ .filters select,.filters input:not([type=checkbox]){min-width:0;width:100%}
+ .filters label{width:100%}
+ .cards{grid-template-columns:1fr}
+ table,thead,tbody,tr,td{display:block;width:100%}
+ thead{display:none}
+ tr{border:1px solid #d8dbee;border-radius:8px;margin-bottom:8px;overflow:hidden}
+ tr.late{border-color:#f3b8b1}
+ td{border:0;padding:4px 10px;display:flex;gap:8px}
+ td::before{content:attr(data-l);flex:none;width:118px;font-weight:600;color:var(--bleu);font-size:12.5px}
+ .sortm{display:flex!important}
+}
+.filters .sortm{display:none}
+@media (max-width:760px){.filters .sortm{display:flex}}
+@media print{.fictif{-webkit-print-color-adjust:exact;print-color-adjust:exact}.filters,.btn{display:none}}
+</style>
+</head>
+<body>
+<div class="fictif"><span>FICTIF</span>DÉMONSTRATION : candidats, dates, responsables et compteurs inventés pour un test. Aucune donnée réelle de recrutement de Groupe Prosuma.</div>
+<header>
+ <img src="https://groupeprosuma.com/wp-content/themes/prosuma-press/_/img/logo-groupe-prosuma.png" alt="Groupe Prosuma">
+ <div>
+  <h1>Tableau de bord du recrutement (FICTIF)</h1>
+  <p>Magasins Groupe Prosuma, scénario de test · État au <b>vendredi 16/10/2026</b> · Préparé par Adjoua, Expert recrutement</p>
+ </div>
+</header>
+<main>
+
+<div class="real"><b>Seuls chiffres réels de cette page :</b> Groupe Prosuma compte <b>186 points de vente</b> et <b>+6 451 collaborateurs</b> (source : <a href="https://groupeprosuma.com" rel="nofollow">groupeprosuma.com</a>, consulté le 15/10/2026). Tout le reste est FICTIF.</div>
+
+<h2>Synthèse (calculée depuis le tableau des candidats)</h2>
+<div class="kpis" id="kpis"></div>
+<div id="check" class="check"></div>
+<p class="note">Lecture selon la règle de l'outil de suivi : l'étape et le drapeau d'écartement sont deux champs distincts. Un écartement « proposé » n'est pas un écartement : il attend la validation d'un humain et ne déclenche aucun message au candidat.</p>
+
+<h2>Entonnoir par étape</h2>
+<div class="funnel" id="funnel"></div>
+
+<h2>Candidats</h2>
+<div class="filters">
+ <label>Poste<select id="fPoste"></select></label>
+ <label>Étape<select id="fEtape"></select></label>
+ <label>Recherche<input id="fTxt" placeholder="initiales, source, responsable"></label>
+ <label class="cb"><input type="checkbox" id="fLate">Seulement les dossiers en alerte</label>
+ <label class="sortm">Trier par<select id="fSort"></select></label>
+ <button id="reset">Réinitialiser</button>
+</div>
+<div id="count"></div>
+<table>
+ <thead><tr id="thead"></tr></thead>
+ <tbody id="tbody"></tbody>
+</table>
+<p class="note">Cliquer sur un titre de colonne trie le tableau (second clic : ordre inverse). Les lignes rosées sont sans action depuis plus de 5 jours au 16/10/2026.</p>
+
+<h2>Alertes : sans action depuis plus de 5 jours</h2>
+<div class="cards" id="alerts"></div>
+
+<h2>Suite logique</h2>
+<div class="suite">
+ <h3 style="margin:0 0 6px;color:#31348e">1. Relances dues (préparées, NON envoyées)</h3>
+ <p class="note">Liste calculée depuis le tableau. Aucune relance n'est partie : chacune attend l'accord d'un humain (responsable recrutement ou manager du poste). Les dossiers en écartement proposé ne sont jamais relancés.</p>
+ <div class="cards" id="relances"></div>
+ <h3 style="margin:16px 0 6px;color:#31348e">2. Décisions qui attendent un humain</h3>
+ <div class="cards" id="decisions"></div>
+ <h3 style="margin:16px 0 6px;color:#31348e">3. Point d'avancement hebdomadaire (brouillon, non envoyé)</h3>
+ <p class="note">Modèle du point du lundi, généré depuis les mêmes données. Il partirait le lundi 19/10/2026 à la responsable recrutement, après relecture. Le bouton copie le texte dans le presse-papiers, il n'envoie rien.</p>
+ <button class="btn j" id="copy">Copier le brouillon</button> <span id="copied" class="note"></span>
+ <pre id="point"></pre>
+</div>
+
+<h2>Hypothèses de ce test</h2>
+<ul class="hyp">
+ <li>Trois postes ouverts en magasin (FICTIF) : Chef·fe de rayon frais (ouvert le 29/09/2026, clôture visée le 13/11/2026), Caissier·ère et Préparateur·rice de commandes (ouverts le 05/10/2026).</li>
+ <li>Outil de suivi supposé : un tableur partagé (aucun logiciel de recrutement connu). Les dates utilisées sont la date de réception et la date de dernière action.</li>
+ <li>Seuil d'alerte : plus de 5 jours sans action. Repère complémentaire : un retour après entretien au-delà de 3 jours.</li>
+ <li>Responsables désignés par leur fonction (FICTIF), sans nom de personne. Candidats désignés par des initiales inventées.</li>
+ <li>Références : à prendre avant toute validation ou offre ; aucune offre n'est en cours.</li>
+</ul>
+</main>
+<footer>FICTIF · Page de démonstration locale, non publiée, noindex · Logo et couleurs : groupeprosuma.com · Adjoua, Expert recrutement</footer>
+
+<script>
+(function(){
+"use strict";
+var TODAY=new Date(2026,9,16);
+var SEUIL=5;
+var ETAPES=["Présélection","Entretien à organiser","Évaluation à consolider","Offre","Écartement proposé"];
+var TAGS={"Présélection":"t-pre","Entretien à organiser":"t-ent","Évaluation à consolider":"t-eva","Offre":"t-off","Écartement proposé":"t-ecp"};
+var CR="Chef·fe de rayon frais",CA="Caissier·ère",PR="Préparateur·rice";
+var RH="Chargée RH (fictif)",MF="Manager rayon frais (fictif)",CC="Chef de caisse (fictif)",RL="Responsable logistique (fictif)",DM="Direction magasin (fictif)";
+// [initiales, poste, etape, source, recu, derniere action, prochaine action, responsable]
+var D=[
+["A. K.",CR,"Présélection","Formulaire carrière","05/10","08/10","Appel de présélection",RH],
+["M. D.",CR,"Présélection","WhatsApp","12/10","14/10","Appel de présélection",RH],
+["S. T.",CR,"Présélection","Cooptation","09/10","10/10","Vérifier l'expérience en produits frais",RH],
+["F. B.",CR,"Présélection","LinkedIn","14/10","15/10","Appel de présélection",RH],
+["Y. K.",CR,"Entretien à organiser","Formulaire carrière","30/09","07/10","Fixer un créneau avec le manager",MF],
+["A. O.",CR,"Entretien à organiser","Cooptation","02/10","13/10","Fixer un créneau avec le manager",MF],
+["R. N.",CR,"Entretien à organiser","LinkedIn","01/10","09/10","Fixer un créneau avec le manager",MF],
+["K. A.",CR,"Évaluation à consolider","Formulaire carrière","29/09","10/10","Compléter la grille du 2e évaluateur",MF],
+["C. G.",CR,"Évaluation à consolider","WhatsApp","30/09","14/10","Rapprocher les deux grilles",RH],
+["E. Z.",CR,"Écartement proposé","Candidature en magasin","03/10","06/10","Valider le motif (hors critères)",DM],
+["B. S.",CR,"Écartement proposé","Formulaire carrière","07/10","12/10","Valider le motif (hors critères)",DM],
+["L. M.",CR,"Écartement proposé","WhatsApp","11/10","15/10","Valider le motif (doublon possible)",DM],
+["N. C.",CA,"Présélection","Formulaire carrière","07/10","08/10","Appel de présélection",RH],
+["J. A.",CA,"Présélection","Candidature en magasin","13/10","14/10","Appel de présélection",RH],
+["O. T.",CA,"Entretien à organiser","WhatsApp","06/10","09/10","Fixer un créneau avec le chef de caisse",CC],
+["H. Y.",CA,"Entretien à organiser","Cooptation","08/10","15/10","Fixer un créneau avec le chef de caisse",CC],
+["P. K.",CA,"Évaluation à consolider","Formulaire carrière","06/10","12/10","Saisir le résultat du test de caisse",CC],
+["D. S.",CA,"Écartement proposé","Formulaire carrière","10/10","13/10","Valider le motif (disponibilité)",DM],
+["I. B.",PR,"Présélection","Candidature en magasin","08/10","09/10","Appel de présélection",RH],
+["G. F.",PR,"Présélection","WhatsApp","14/10","15/10","Appel de présélection",RH],
+["W. E.",PR,"Entretien à organiser","Formulaire carrière","06/10","14/10","Fixer un créneau à l'entrepôt",RL],
+["T. D.",PR,"Entretien à organiser","Cooptation","07/10","08/10","Fixer un créneau à l'entrepôt",RL],
+["V. O.",PR,"Évaluation à consolider","Formulaire carrière","06/10","13/10","Compléter la grille de l'évaluateur",RL]
+];
+function dt(s){var p=s.split("/");return new Date(2026,+p[1]-1,+p[0]);}
+function days(s){return Math.round((TODAY-dt(s))/864e5);}
+var rows=D.map(function(r,i){return{id:i,ini:"Candidat "+r[0],poste:r[1],etape:r[2],source:r[3],recu:r[4],der:r[5],next:r[6],resp:r[7],j:days(r[5]),ecp:r[2]==="Écartement proposé"};});
+rows.forEach(function(r){r.late=r.j>SEUIL;});
+var POSTES=[CR,CA,PR];
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function count(list,et){return list.filter(function(r){return r.etape===et;}).length;}
+
+/* Synthèse : poste suivi en tête = chef de rayon frais */
+var cr=rows.filter(function(r){return r.poste===CR;});
+var k={total:cr.length,pre:count(cr,"Présélection"),ent:count(cr,"Entretien à organiser"),eva:count(cr,"Évaluation à consolider"),off:count(cr,"Offre"),ecp:count(cr,"Écartement proposé")};
+var att=k.pre, act=k.ent+k.eva+k.off;
+var lateAll=rows.filter(function(r){return r.late;});
+var ok1=(k.pre+k.ent+k.eva+k.off+k.ecp)===k.total;
+var ok2=(att+act+k.ecp)===k.total;
+var ok3=k.total===12&&k.pre===4&&k.ent===3&&k.eva===2&&k.off===0&&k.ecp===3;
+var okAll=rows.length===ETAPES.reduce(function(s,e){return s+count(rows,e);},0);
+console.assert(ok1&&ok2&&ok3&&okAll,"Recoupement KO");
+var ouverture=new Date(2026,8,29);
+var K=[
+["",k.total,"candidatures reçues, Chef·fe de rayon frais"],
+["",k.pre,"en présélection (en attente de traitement)"],
+["warn",k.ent,"entretiens à organiser"],
+["warn",k.eva,"évaluations à consolider"],
+["",k.off,"offre en cours"],
+["",k.ecp,"écartements proposés, à valider par un humain"],
+["alert",cr.filter(function(r){return r.late;}).length,"dossiers sans action > 5 jours (ce poste)"],
+["",Math.round((TODAY-ouverture)/864e5),"jours depuis l'ouverture (29/09/2026)"]
+];
+$("kpis").innerHTML=K.map(function(x){return '<div class="kpi '+x[0]+'"><b>'+x[1]+'</b><small>'+esc(x[2])+'</small></div>';}).join("");
+var c=$("check");
+c.className="check "+((ok1&&ok2&&ok3&&okAll)?"ok":"ko");
+c.textContent=(ok1&&ok2&&ok3&&okAll?"Recoupement juste : ":"Recoupement FAUX, ne pas diffuser : ")+k.pre+" + "+k.ent+" + "+k.eva+" + "+k.off+" + "+k.ecp+" = "+k.total+" candidatures ; en attente "+att+" + actifs "+act+" + écartements proposés "+k.ecp+" = "+(att+act+k.ecp)+" ; tous postes : "+rows.length+" lignes = somme des étapes.";
+
+/* Entonnoir */
+function drawFunnel(list){
+ var max=Math.max.apply(null,ETAPES.map(function(e){return count(list,e);}).concat([1]));
+ $("funnel").innerHTML=ETAPES.map(function(e){var n=count(list,e);return '<div class="row"><div class="lab">'+esc(e)+'</div><div class="bar'+(e==="Écartement proposé"?" ecart":"")+'" style="width:calc((100% - 230px) * '+(n/max).toFixed(3)+')"></div><div class="n">'+n+'</div></div>';}).join("")+'<p class="note">Périmètre : '+esc($("fPoste").value||"tous les postes")+'. Taux de passage non disponible : l\'historique des étapes n\'est pas encore tenu.</p>';
+}
+
+/* Tableau */
+var COLS=[["ini","Candidat"],["poste","Poste"],["etape","Étape"],["source","Source"],["der","Dernière action"],["j","Jours"],["next","Prochaine action"],["resp","Responsable"]];
+var sortKey="j",sortDir=-1;
+$("fPoste").innerHTML='<option value="">Tous les postes</option>'+POSTES.map(function(p){return '<option>'+esc(p)+'</option>';}).join("");
+$("fEtape").innerHTML='<option value="">Toutes les étapes</option>'+ETAPES.map(function(p){return '<option>'+esc(p)+'</option>';}).join("");
+$("fSort").innerHTML=COLS.map(function(c){return '<option value="'+c[0]+'">'+esc(c[1])+'</option>';}).join("");
+$("fSort").value=sortKey;
+function val(r,key){if(key==="der"||key==="recu")return dt(r[key]).getTime();if(key==="etape")return ETAPES.indexOf(r.etape);return r[key];}
+function draw(){
+ $("thead").innerHTML=COLS.map(function(c){return '<th data-k="'+c[0]+'">'+esc(c[1])+(sortKey===c[0]?'<span class="ar">'+(sortDir>0?"▲":"▼")+'</span>':'')+'</th>';}).join("");
+ var fp=$("fPoste").value,fe=$("fEtape").value,ft=$("fTxt").value.toLowerCase(),fl=$("fLate").checked;
+ var list=rows.filter(function(r){return(!fp||r.poste===fp)&&(!fe||r.etape===fe)&&(!fl||r.late)&&(!ft||(r.ini+" "+r.source+" "+r.resp+" "+r.next).toLowerCase().indexOf(ft)>=0);});
+ list.sort(function(a,b){var x=val(a,sortKey),y=val(b,sortKey);return(x>y?1:x<y?-1:a.id-b.id)*sortDir;});
+ $("tbody").innerHTML=list.map(function(r){return '<tr class="'+(r.late?"late":"")+'">'+
+  '<td data-l="Candidat"><b>'+esc(r.ini)+'</b></td><td data-l="Poste">'+esc(r.poste)+'</td>'+
+  '<td data-l="Étape"><span class="tag '+TAGS[r.etape]+'">'+esc(r.etape)+'</span></td><td data-l="Source">'+esc(r.source)+'</td>'+
+  '<td data-l="Dernière action">'+r.der+'/2026</td><td data-l="Jours sans action">'+(r.late?'<span class="late-b">'+r.j+' j ⚠</span>':r.j+' j')+'</td>'+
+  '<td data-l="Prochaine action">'+esc(r.next)+'</td><td data-l="Responsable">'+esc(r.resp)+'</td></tr>';}).join("");
+ $("count").textContent=list.length+" candidat(s) affiché(s) sur "+rows.length+" · filtres actifs : "+([fp,fe,ft&&("« "+ft+" »"),fl&&"alertes seules"].filter(Boolean).join(", ")||"aucun");
+ var base=rows.filter(function(r){return !fp||r.poste===fp;});
+ drawFunnel(base);
+}
+document.addEventListener("click",function(e){var th=e.target.closest&&e.target.closest("th[data-k]");if(!th)return;var kk=th.getAttribute("data-k");if(kk===sortKey)sortDir=-sortDir;else{sortKey=kk;sortDir=1;}$("fSort").value=sortKey;draw();});
+["fPoste","fEtape","fLate"].forEach(function(id){$(id).addEventListener("change",draw);});
+$("fTxt").addEventListener("input",draw);
+$("fSort").addEventListener("change",function(){sortKey=this.value;sortDir=sortKey==="j"?-1:1;draw();});
+$("reset").addEventListener("click",function(){$("fPoste").value="";$("fEtape").value="";$("fTxt").value="";$("fLate").checked=false;sortKey="j";sortDir=-1;$("fSort").value="j";draw();});
+draw();
+
+/* Alertes */
+lateAll.sort(function(a,b){return b.j-a.j;});
+$("alerts").innerHTML=lateAll.map(function(r){return '<div class="card'+(r.ecp?" dec":"")+'"><h4>'+esc(r.ini)+' · '+esc(r.poste)+'</h4>'+esc(r.etape)+', dernière action le '+r.der+'/2026, soit <b>'+r.j+' jours</b>.<br>Prochaine action : '+esc(r.next)+' ('+esc(r.resp)+').'+(r.ecp?'<br><i>Décision interne en attente, pas de relance au candidat.</i>':'')+'</div>';}).join("")||'<p>Aucune alerte.</p>';
+
+/* Relances dues : actifs ou en attente, en alerte, ou évaluation > 3 jours */
+function relance(r){
+ if(r.etape==="Présélection")return["Candidat (WhatsApp ou appel)","Proposer un créneau d'appel de présélection de 15 minutes."];
+ if(r.etape==="Entretien à organiser")return[r.resp+" puis candidat","Obtenir 2 créneaux du responsable, puis les proposer au candidat."];
+ if(r.etape==="Évaluation à consolider")return[r.resp,"Demander la grille d'évaluation manquante pour décider."];
+ return[r.resp,"Faire le point."];
+}
+var rel=rows.filter(function(r){return !r.ecp&&(r.late||(r.etape==="Évaluation à consolider"&&r.j>3));}).sort(function(a,b){return b.j-a.j;});
+$("relances").innerHTML=rel.map(function(r,i){var x=relance(r);return '<div class="card"><h4>R'+(i+1)+' · '+esc(r.ini)+' · '+esc(r.poste)+'</h4>Destinataire : '+esc(x[0])+'<br>Objet : '+esc(x[1])+'<br>Motif : '+r.j+' jours sans action ('+esc(r.etape)+').<br><span class="st">Préparée, non envoyée, à valider par un humain</span></div>';}).join("")||'<p>Aucune relance due.</p>';
+var dec=rows.filter(function(r){return r.ecp;});
+$("decisions").innerHTML=dec.map(function(r){return '<div class="card dec"><h4>'+esc(r.ini)+' · '+esc(r.poste)+'</h4>'+esc(r.next)+'. Décideur : '+esc(r.resp)+'.<br>A. Valider l\'écartement (message de refus à préparer ensuite)<br>B. Repasser en présélection<br>C. Verser au vivier avec l\'accord du candidat</div>';}).join("");
+
+/* Point d'avancement */
+var L=[];
+L.push("FICTIF · Objet : Recrutement magasins, point de la semaine du 12 au 16/10/2026");
+L.push("");
+L.push("Bonjour,");
+L.push("");
+L.push("Voici où en sont nos trois postes au 16/10/2026.");
+POSTES.forEach(function(p){var l=rows.filter(function(r){return r.poste===p;});
+ L.push("· "+p+" : "+l.length+" candidatures ; "+ETAPES.map(function(e){return count(l,e)+" "+e.toLowerCase();}).join(", ")+" ; "+l.filter(function(r){return r.late;}).length+" sans action depuis plus de 5 jours.");});
+L.push("");
+L.push("Ce qui bloque : "+rows.filter(function(r){return r.late&&r.etape==="Entretien à organiser";}).length+" entretiens attendent un créneau des managers, et "+rel.filter(function(r){return r.etape==="Évaluation à consolider";}).length+" grilles d'évaluation ne sont pas complètes.");
+L.push("Relances prêtes, non envoyées : "+rel.length+" (liste dans le tableau de bord).");
+L.push("");
+L.push("Ce qui attend votre décision :");
+L.push("1. Les "+rel.length+" relances : A. je les envoie toutes  B. seulement celles aux managers  C. on en parle lundi");
+L.push("2. Les "+dec.length+" écartements proposés : A. validés  B. à revoir un par un  C. versés au vivier");
+L.push("");
+L.push("Tableau de bord : [lien du tableau de bord]");
+L.push("");
+L.push("Adjoua, Expert recrutement");
+$("point").textContent=L.join("\n");
+$("copy").addEventListener("click",function(){var t=$("point").textContent;if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){$("copied").textContent="Copié (rien n'a été envoyé).";},function(){$("copied").textContent="Copie impossible, sélectionner le texte.";});}});
+window.__CHECK={ok:ok1&&ok2&&ok3&&okAll,k:k,relances:rel.length,alertes:lateAll.length,decisions:dec.length};
+})();
+</script>
+</body>
+</html>
