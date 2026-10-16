@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="googlebot" content="noindex,nofollow">
+<title>FICTIF · Grille d'évaluation, chef de rayon frais · Groupe Prosuma (test 15.1)</title>
+<style>
+:root{--b:#31348e;--y:#fecc00;--g:#f5f5fb;--t:#222}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;color:var(--t);line-height:1.55;background:#fff;overflow-x:hidden;font-size:16px}
+a{color:var(--b);overflow-wrap:anywhere}
+.fictif{position:sticky;top:0;z-index:20;background:var(--y);color:var(--b);font-weight:700;padding:9px 14px;text-align:center;font-size:14px;border-bottom:3px solid var(--b);line-height:1.35}
+.fictif b{background:var(--b);color:var(--y);padding:2px 8px;border-radius:3px;margin-right:6px;letter-spacing:.08em}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header.top{border-bottom:5px solid var(--y);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
+header.top img{height:62px;width:auto;flex:none}
+.btn{display:inline-block;background:var(--b);color:#fff;text-decoration:none;font-weight:700;padding:13px 20px;border-radius:6px;border:2px solid var(--b);text-align:center}
+.btn.y{background:var(--y);color:var(--b);border-color:var(--y)}
+.btn.o{background:transparent;color:#fff;border-color:#fff}
+header.top .btn{font-size:14px;padding:9px 14px}
+.hero{background:var(--b);color:#fff;padding:34px 0 38px}
+.hero h1{font-size:28px;line-height:1.2;margin:0 0 12px;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--y)}
+.hero p{font-size:17px;max-width:720px;margin:0 0 18px;color:#e9e9f7}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta .btn{flex:1 1 100%}
+section{padding:28px 0 6px}
+h2{color:var(--b);font-size:22px;margin:0 0 10px;border-left:6px solid var(--y);padding-left:10px;line-height:1.25}
+h3{color:var(--b);font-size:17px;margin:0 0 4px}
+.small{font-size:13.5px;color:#4a4a55;margin:4px 0}
+.tag{display:inline-block;background:var(--y);color:var(--b);font-size:11.5px;font-weight:800;letter-spacing:.05em;padding:2px 7px;border-radius:3px;vertical-align:middle}
+.note{background:#fffbe6;border-left:6px solid var(--y);padding:10px 14px;margin:12px 0;border-radius:4px;font-size:14.5px}
+.box{background:var(--g);border-left:6px solid var(--b);padding:10px 14px;margin:12px 0;border-radius:4px;font-size:14.5px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:12px 0}
+.steps li{counter-increment:s;position:relative;padding:6px 0 10px 50px;min-height:44px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:4px;width:36px;height:36px;border-radius:50%;background:var(--y);color:var(--b);font-weight:800;font-size:18px;text-align:center;line-height:32px;border:2px solid var(--b)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0 6px}
+.k{background:var(--b);color:#fff;border-radius:6px;padding:12px 8px;text-align:center}
+.k b{display:block;font-size:22px;color:var(--y);line-height:1.15}.k span{font-size:13px}
+.stages{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+.stage{border:2px solid #d6d6e4;border-radius:8px;padding:14px;background:#fff}
+.stage .sh{display:flex;gap:12px;align-items:center;min-height:56px}
+.stage .sn{flex:none;width:38px;height:38px;border-radius:50%;background:var(--b);color:var(--y);font-weight:800;font-size:19px;text-align:center;line-height:38px}
+.cl{list-style:none;padding:0;margin:8px 0 0}
+.cl li{display:flex;gap:6px;align-items:flex-start;padding:5px 0;border-top:1px solid #e6e6ef;font-size:14.5px}
+.cl li .tx{flex:1;min-width:0}
+.cl li i{flex:none;font-style:normal;margin-left:6px;color:var(--b);font-weight:700;font-size:13px;white-space:nowrap}
+.cl li .n{flex:none}
+.cl .n,.cr .n{display:inline-block;min-width:24px;height:24px;line-height:24px;border-radius:12px;background:var(--g);color:var(--b);font-weight:700;font-size:12.5px;text-align:center;margin-right:4px}
+h3.cat{padding:7px 10px;border-radius:4px;margin:18px 0 8px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px}
+h3.cat span{font-size:13px;font-weight:600;color:#333}
+.c0{background:#dce6f7}.c1{background:#ddf0e4}.c2{background:#fff1bf}.c3{background:#fce3cc}
+details.cr{border:1px solid #d6d6e4;border-radius:6px;margin:6px 0;background:#fff;border-left:6px solid #aaa}
+details.cr.c0{border-left-color:#1f4e9e}details.cr.c1{border-left-color:#2e8b57}details.cr.c2{border-left-color:#e0a800}details.cr.c3{border-left-color:#e8710a}
+details.cr summary{cursor:pointer;padding:10px;display:flex;gap:8px;align-items:flex-start;list-style:none}
+details.cr summary::-webkit-details-marker{display:none}
+details.cr summary:after{content:'▾';flex:none;color:var(--b);font-size:18px;line-height:24px;margin-left:2px}
+details.cr[open] summary:after{content:'▴'}
+details.cr summary .t{flex:1;font-weight:600;color:var(--b);min-width:0;overflow-wrap:anywhere}
+details.cr summary .w{flex:none;font-size:13px;font-weight:700;background:var(--y);color:var(--b);border-radius:3px;padding:1px 6px}
+details.cr .body{padding:2px 12px 12px}
+details.cr .meta,.fact{font-size:14px;margin:4px 0 8px}
+.anc{display:grid;grid-template-columns:1fr;gap:8px}
+.anc div{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:5px;font-size:14px}
+.anc b{flex:none;width:26px;height:26px;border-radius:50%;text-align:center;line-height:26px;color:#fff;font-size:14px}
+.anc span{min-width:0;overflow-wrap:anywhere}
+.a1{background:#fdecec}.a1 b{background:#b3261e}.a3{background:#fff6dc}.a3 b{background:#8a5f00}.a5{background:#e6f4ea}.a5 b{background:#1e7a3c}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:13.5px}
+th{background:var(--b);color:#fff;text-align:left;padding:7px 8px}
+td{border:1px solid #d6d6e4;padding:7px 8px;vertical-align:top;word-break:break-word;background:#fff}
+.scroll{overflow-x:auto}
+code{background:var(--g);padding:1px 5px;border-radius:3px;font-size:13.5px;overflow-wrap:anywhere}
+.formula{background:var(--g);border-left:6px solid var(--b);padding:12px 14px;border-radius:4px;font-size:15px}
+ul,ol{padding-left:22px}li{margin:3px 0}
+.sheetbox{border:3px solid var(--b);border-radius:8px;padding:16px;margin:16px 0;background:#fafaff;text-align:center}
+.sheetbox .wait{display:none;color:#4a4a55}
+footer{margin:34px 0 0;background:var(--b);color:#fff;padding:18px 0 22px;font-size:13px}
+footer a{color:var(--y)}
+@media(min-width:700px){
+ .hero{padding:50px 0 54px}.hero h1{font-size:40px}
+ .kpis{grid-template-columns:repeat(4,1fr)}.k b{font-size:26px}
+ .cta .btn{flex:1 1 200px;max-width:280px}
+ .stages{grid-template-columns:repeat(3,1fr)}
+ .anc{grid-template-columns:repeat(3,1fr)}
+ .anc div{flex-direction:column}
+ h2{font-size:26px}.fictif{font-size:15px}
+}
+@media print{.fictif{position:static}.hero{background:#fff;color:#222;border-bottom:4px solid var(--b)}.hero h1,.hero h1 em{color:var(--b)}.hero p{color:#222}.cta{display:none}details.cr .body{display:block}}
+</style></head><body>
+<div class="fictif"><b>FICTIF</b> Page de test : poste, critères, poids, étapes et exemples inventés. Seuls les chiffres du groupe cités avec leur source sont réels. Aucune offre réelle, aucun candidat réel.</div>
+<header class="top"><div class="wrap"><img src="https://groupeprosuma.com/wp-content/themes/prosuma-press/_/img/logo-groupe-prosuma.png" alt="Groupe Prosuma" width="113" height="62"><a class="btn y" href="#grille">Voir la grille</a></div></header>
+
+<div class="hero"><div class="wrap">
+<h1>Noter un candidat de la même façon, <em>à chaque étape.</em></h1>
+<p>Grille d'évaluation du poste de Chef de rayon produits frais (H/F) : trois étapes d'entretien, quinze critères, des repères pour reconnaître un 1, un 3 ou un 5, et un fait observé pour chaque note.</p>
+<div class="cta"><a class="btn y" href="#etapes">Les trois étapes</a><a class="btn o" href="#mode">Mode d'emploi</a></div>
+</div></div>
+
+<main><div class="wrap">
+
+<section id="sheet">
+<div class="sheetbox">
+<h3>Le classeur de notation</h3>
+<p class="small">Un Google Sheet avec la note pondérée calculée par formule, une feuille par évaluateur et une synthèse multi-étapes. Les onglets contiennent un exemple FICTIF.</p>
+<a class="btn" id="sheetlink" href="__SHEET_URL__">Ouvrir le Google Sheet</a>
+<p class="wait" id="sheetwait">Le lien du classeur sera ajouté ici très bientôt.</p>
+</div>
+</section>
+
+<section id="mode">
+<h2>Mode d'emploi pour l'évaluateur</h2>
+<ol class="steps">
+<li><b>Avant l'entretien.</b> Lis les critères de ton étape et leurs repères 1, 3 et 5 (sections ci-dessous).</li>
+<li><b>Pendant.</b> Écris le fait observé : ce que le candidat dit ou fait, avec ses chiffres. Pas d'impression, pas de supposition.</li>
+<li><b>Juste après.</b> Choisis la note de 1 à 5 avec les repères. Pas de note sans fait.</li>
+<li><b>Seul.</b> Remplis ta feuille avant de voir celle de l'autre évaluateur. Remplie en réunion, elle ne mesure que le premier avis exprimé.</li>
+<li><b>En commun.</b> La synthèse affiche la moyenne et signale chaque écart de plus de 3 points : on en parle avant de garder la moyenne.</li>
+</ol>
+<div class="note"><b>Décision indicative.</b> Le classeur propose « aligné », « à creuser » ou « écart net ». C'est une aide. Écarter un candidat, ou lui annoncer sa note, se décide par une personne, jamais par la formule.</div>
+</section>
+
+<section id="etapes">
+<h2>Les trois étapes <span class="tag">FICTIF</span></h2>
+<p>Chaque critère est évalué à une ou deux étapes, pour que personne ne note ce qu'il n'a pas pu observer. Le numéro de chaque critère est celui de la grille complète (1 à 15), d'où les sauts de numérotation dans une étape. Le découpage est une hypothèse à valider avec le manager avant le premier entretien.</p>
+<div class="stages"><div class="stage"><div class="sh"><span class="sn">1</span><div><h3>Entretien RH</h3><p class="small">Responsable recrutement (FICTIF)</p></div></div>
+<p class="small">Environ 45 minutes [durée FICTIVE]. Parcours, expérience, motivation, encadrement raconté, régime horaire.</p><p><b>10 critères, 73 points de poids couverts.</b> Éliminatoires vérifiés : É1, É2.</p><ul class="cl"><li><span class="n">2</span><span class="tx">Commandes, stock et rotation des produits (DLC courtes)</span><i>6 pts</i></li><li><span class="n">3</span><span class="tx">Maîtrise de la démarque (casse, produits à date courte)</span><i>5 pts</i></li><li><span class="n">7</span><span class="tx">Encadrement : consignes, planning, conflit d&#x27;équipe</span><i>8 pts</i></li><li><span class="n">9</span><span class="tx">Service client et traitement des réclamations</span><i>7 pts</i></li><li><span class="n">10</span><span class="tx">Rigueur et respect des procédures</span><i>7 pts</i></li><li><span class="n">11</span><span class="tx">Adéquation avec la maison : proximité, équipes locales, esprit de groupe</span><i>8 pts</i></li><li><span class="n">12</span><span class="tx">Motivation pour la grande distribution ivoirienne et ce magasin</span><i>7 pts</i></li><li><span class="n">13</span><span class="tx">Pertinence de l&#x27;expérience en rayon frais (taille de rayon, volume)</span><i>9 pts</i></li><li><span class="n">14</span><span class="tx">Progression de responsabilités dans le parcours</span><i>8 pts</i></li><li><span class="n">15</span><span class="tx">Capacité d&#x27;apprentissage (nouvel outil, nouvelle règle)</span><i>8 pts</i></li></ul></div><div class="stage"><div class="sh"><span class="sn">2</span><div><h3>Mise en situation de rayon</h3><p class="small">Chef de secteur ou directeur adjoint (FICTIF)</p></div></div>
+<p class="small">Environ 60 minutes [durée FICTIVE]. Lecture d&#x27;un rayon photographié avec anomalies, rupture de froid, planning, tableau de bord simplifié.</p><p><b>8 critères, 47 points de poids couverts.</b> Éliminatoires vérifiés : aucun.</p><ul class="cl"><li><span class="n">1</span><span class="tx">Hygiène et chaîne du froid (méthode HACCP, relevés, DLC)</span><i>6 pts</i></li><li><span class="n">2</span><span class="tx">Commandes, stock et rotation des produits (DLC courtes)</span><i>6 pts</i></li><li><span class="n">4</span><span class="tx">Merchandising : implantation, balisage, prix, promotions</span><i>5 pts</i></li><li><span class="n">5</span><span class="tx">Lecture des chiffres du rayon (chiffre d&#x27;affaires, marge, ruptures)</span><i>4 pts</i></li><li><span class="n">6</span><span class="tx">Réception des marchandises et contrôle qualité</span><i>4 pts</i></li><li><span class="n">8</span><span class="tx">Organisation sous pression (pic du samedi, rupture, panne de froid)</span><i>8 pts</i></li><li><span class="n">9</span><span class="tx">Service client et traitement des réclamations</span><i>7 pts</i></li><li><span class="n">10</span><span class="tx">Rigueur et respect des procédures</span><i>7 pts</i></li></ul></div><div class="stage"><div class="sh"><span class="sn">3</span><div><h3>Entretien directeur de magasin</h3><p class="small">Directeur du magasin qui recrute (FICTIF)</p></div></div>
+<p class="small">Environ 45 minutes [durée FICTIVE]. Résultats du rayon, conflits d&#x27;équipe, adéquation avec la maison, projet à 12 mois.</p><p><b>10 critères, 71 points de poids couverts.</b> Éliminatoires vérifiés : É1, É2.</p><ul class="cl"><li><span class="n">1</span><span class="tx">Hygiène et chaîne du froid (méthode HACCP, relevés, DLC)</span><i>6 pts</i></li><li><span class="n">3</span><span class="tx">Maîtrise de la démarque (casse, produits à date courte)</span><i>5 pts</i></li><li><span class="n">5</span><span class="tx">Lecture des chiffres du rayon (chiffre d&#x27;affaires, marge, ruptures)</span><i>4 pts</i></li><li><span class="n">7</span><span class="tx">Encadrement : consignes, planning, conflit d&#x27;équipe</span><i>8 pts</i></li><li><span class="n">8</span><span class="tx">Organisation sous pression (pic du samedi, rupture, panne de froid)</span><i>8 pts</i></li><li><span class="n">11</span><span class="tx">Adéquation avec la maison : proximité, équipes locales, esprit de groupe</span><i>8 pts</i></li><li><span class="n">12</span><span class="tx">Motivation pour la grande distribution ivoirienne et ce magasin</span><i>7 pts</i></li><li><span class="n">13</span><span class="tx">Pertinence de l&#x27;expérience en rayon frais (taille de rayon, volume)</span><i>9 pts</i></li><li><span class="n">14</span><span class="tx">Progression de responsabilités dans le parcours</span><i>8 pts</i></li><li><span class="n">15</span><span class="tx">Capacité d&#x27;apprentissage (nouvel outil, nouvelle règle)</span><i>8 pts</i></li></ul></div></div>
+</section>
+
+<section id="grille">
+<h2>La grille : quinze critères, trois repères</h2>
+<p>Ouvre un critère pour voir ce qu'on observe et comment reconnaître un 1, un 3 ou un 5. Les poids totalisent 100. Ils reprennent la scorecard 4.1 (niveau encadrement : technique 30, comportement 30, entreprise 15, parcours 25) et se figent avant le premier entretien.</p>
+<h3 class="cat c0">Compétences techniques <span>30 points sur 100</span></h3><details class="cr c0"><summary><span class="n">1</span><span class="t">Hygiène et chaîne du froid (méthode HACCP, relevés, DLC)</span><span class="w">6 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> Mise en situation · Directeur · <b>Se vérifie par :</b> Mise en situation : rayon photographié avec trois anomalies à repérer</p>
+<p class="fact"><b>Fait à relever :</b> Seuils de température et gestes cités, anomalies repérées sur le rayon de l&#x27;exercice, trace écrite.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Ne cite ni température ni date limite. Laisse en rayon un produit douteux, ou ne sait pas quoi faire d&#x27;un produit hors température.</span></div><div class="a3"><b>3</b><span>Cite les règles de base (température du froid, contrôle des dates limites) et le retrait d&#x27;un produit douteux. La trace écrite est évoquée sans détail.</span></div><div class="a5"><b>5</b><span>Cite relevés, seuils, horaires de contrôle, décision de retrait et trace écrite. Repère toutes les anomalies de l&#x27;exercice. A formé un collaborateur après un incident.</span></div></div></div></details>
+<details class="cr c0"><summary><span class="n">2</span><span class="t">Commandes, stock et rotation des produits (DLC courtes)</span><span class="w">6 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Mise en situation · <b>Se vérifie par :</b> Questions sur le détail : fréquence de commande, outils, règles de rotation</p>
+<p class="fact"><b>Fait à relever :</b> Outil de commande, fréquence, chiffres regardés avant de commander, règle de rotation, un exemple chiffré.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Ne décrit pas comment il commande. Ne parle pas de rotation des produits (le plus ancien part en premier).</span></div><div class="a3"><b>3</b><span>Décrit sa routine de commande et la rotation par date limite. Regarde les ventes passées, sans chiffre précis.</span></div><div class="a5"><b>5</b><span>Décrit outil, fréquence, chiffres consultés (ventes passées, stock, dates limites) et règle de rotation, avec un exemple chiffré de rupture ou de surstock évité.</span></div></div></div></details>
+<details class="cr c0"><summary><span class="n">3</span><span class="t">Maîtrise de la démarque (casse, produits à date courte)</span><span class="w">5 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> Récit d&#x27;une action menée, avec le résultat obtenu</p>
+<p class="fact"><b>Fait à relever :</b> Action menée, montant ou pourcentage de pertes avant et après, durée du suivi.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Ne sait pas ce qu&#x27;est la démarque, ou n&#x27;a mené aucune action. Accuse seulement les clients ou les fournisseurs.</span></div><div class="a3"><b>3</b><span>Cite des causes de pertes (casse, dates courtes) et une action menée, sans mesure avant et après.</span></div><div class="a5"><b>5</b><span>Action précise, mesurée avant et après, tenue dans la durée. Relie la démarque aux commandes et à la rotation.</span></div></div></div></details>
+<details class="cr c0"><summary><span class="n">4</span><span class="t">Merchandising : implantation, balisage, prix, promotions</span><span class="w">5 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> Mise en situation · <b>Se vérifie par :</b> Exercice sur un plan ou une photo de rayon</p>
+<p class="fact"><b>Fait à relever :</b> Ordre des gestes observé dans l&#x27;exercice, erreurs corrigées, contrôle final.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Remplit les étagères sans ordre. Oublie le prix ou le balisage de la promotion.</span></div><div class="a3"><b>3</b><span>Implante la promotion et contrôle prix et balisage, mais l&#x27;ordre des gestes est incomplet ou une zone du rayon est négligée.</span></div><div class="a5"><b>5</b><span>Ordre clair (prix, balisage, implantation, stock de la promotion). Donne sa place à la promotion sans dégrader le reste du rayon. Contrôle en fin de poste.</span></div></div></div></details>
+<details class="cr c0"><summary><span class="n">5</span><span class="t">Lecture des chiffres du rayon (chiffre d&#x27;affaires, marge, ruptures)</span><span class="w">4 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> Mise en situation · Directeur · <b>Se vérifie par :</b> Lecture d&#x27;un tableau de bord simplifié de rayon</p>
+<p class="fact"><b>Fait à relever :</b> Lignes du tableau citées, cause avancée, actions proposées avec leur indicateur.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Lit le chiffre d&#x27;affaires seul. Ne relie pas marge et démarque.</span></div><div class="a3"><b>3</b><span>Repère dans le tableau une cause probable de la baisse de marge (démarque ou mix produits) et propose une action.</span></div><div class="a5"><b>5</b><span>Relie marge, démarque et mix produits dans le tableau, hiérarchise, propose deux actions avec leur indicateur de suivi.</span></div></div></div></details>
+<details class="cr c0"><summary><span class="n">6</span><span class="t">Réception des marchandises et contrôle qualité</span><span class="w">4 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> Mise en situation · <b>Se vérifie par :</b> Questions sur le détail d&#x27;une réception réelle</p>
+<p class="fact"><b>Fait à relever :</b> Contrôles faits ou cités à la livraison, décision prise, trace écrite.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Accepte la livraison sans contrôle de température et signale plus tard.</span></div><div class="a3"><b>3</b><span>Contrôle la température et l&#x27;état des colis, refuse ou isole un produit douteux, prévient son chef.</span></div><div class="a5"><b>5</b><span>Contrôle température et dates limites, refuse ou isole, prévient le fournisseur, enregistre l&#x27;écart par écrit. Donne un exemple réel.</span></div></div></div></details><h3 class="cat c1">Comportement <span>30 points sur 100</span></h3><details class="cr c1"><summary><span class="n">7</span><span class="t">Encadrement : consignes, planning, conflit d&#x27;équipe</span><span class="w">8 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> Récit d&#x27;un conflit d&#x27;équipe traité, avec son issue</p>
+<p class="fact"><b>Fait à relever :</b> Situation précise, ce que le candidat a dit et fait lui-même, issue constatée.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Décrit un style de management sans exemple, ou raconte un conflit sans dire ce qu&#x27;il a fait.</span></div><div class="a3"><b>3</b><span>Raconte un désaccord réel et ce qu&#x27;il a fait. L&#x27;issue ou le suivi reste vague.</span></div><div class="a5"><b>5</b><span>Situation précise, parole tenue, issue durable constatée, suite donnée (point de contrôle, règle d&#x27;équipe).</span></div></div></div></details>
+<details class="cr c1"><summary><span class="n">8</span><span class="t">Organisation sous pression (pic du samedi, rupture, panne de froid)</span><span class="w">8 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> Mise en situation · Directeur · <b>Se vérifie par :</b> Mise en situation chronométrée</p>
+<p class="fact"><b>Fait à relever :</b> Premières actions dans l&#x27;ordre, délai, qui a fait quoi.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Attend la consigne du directeur. Ne protège pas les produits et ne répartit pas les tâches.</span></div><div class="a3"><b>3</b><span>Protège les produits et prévient la hiérarchie. La répartition des tâches est partielle ou la trace est oubliée.</span></div><div class="a5"><b>5</b><span>Protège d&#x27;abord produits et client, répartit les tâches par nom, prévient la hiérarchie, trace les relevés. Revient ensuite sur la cause.</span></div></div></div></details>
+<details class="cr c1"><summary><span class="n">9</span><span class="t">Service client et traitement des réclamations</span><span class="w">7 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Mise en situation · <b>Se vérifie par :</b> Récit d&#x27;une réclamation réelle</p>
+<p class="fact"><b>Fait à relever :</b> Réclamation racontée, gestes faits, correction dans le rayon, information donnée à l&#x27;équipe.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Remplace le produit sans s&#x27;excuser ni chercher la cause. Renvoie le client vers la caisse.</span></div><div class="a3"><b>3</b><span>Écoute, remplace, vérifie les produits voisins dans le rayon. Ne change rien ensuite.</span></div><div class="a5"><b>5</b><span>Écoute, remplace, contrôle tout le lot dans le rayon, corrige la cause (rotation, relevé) et en informe l&#x27;équipe.</span></div></div></div></details>
+<details class="cr c1"><summary><span class="n">10</span><span class="t">Rigueur et respect des procédures</span><span class="w">7 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Mise en situation · <b>Se vérifie par :</b> Récit d&#x27;une situation où la règle coûtait du temps</p>
+<p class="fact"><b>Fait à relever :</b> Situation où la règle coûtait du temps, choix fait, explication donnée à l&#x27;équipe.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Contourne la règle quand le rayon est chargé et le justifie par le manque de temps.</span></div><div class="a3"><b>3</b><span>Applique la règle et reconnaît qu&#x27;elle coûte du temps. Ne l&#x27;explique pas à l&#x27;équipe.</span></div><div class="a5"><b>5</b><span>Applique la règle, explique pourquoi à l&#x27;équipe, en tire un geste d&#x27;équipe ou une amélioration.</span></div></div></div></details><h3 class="cat c2">Adéquation à l&#x27;entreprise <span>15 points sur 100</span></h3><details class="cr c2"><summary><span class="n">11</span><span class="t">Adéquation avec la maison : proximité, équipes locales, esprit de groupe</span><span class="w">8 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> Questions sur les valeurs du groupe (site public)</p>
+<p class="fact"><b>Fait à relever :</b> Pratique de proximité décrite (quand, avec qui, effet), lien fait avec ce que dit le groupe.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Répond par des formules générales. Aucune pratique de proximité décrite.</span></div><div class="a3"><b>3</b><span>Cite une ou deux pratiques de proximité (point de début de poste, écoute de l&#x27;équipe). Peu de lien avec les valeurs du groupe.</span></div><div class="a5"><b>5</b><span>Gestes concrets et récents de proximité avec l&#x27;équipe et les clients. Relie ses pratiques à ce que le groupe dit de l&#x27;encadrement local.</span></div></div></div></details>
+<details class="cr c2"><summary><span class="n">12</span><span class="t">Motivation pour la grande distribution ivoirienne et ce magasin</span><span class="w">7 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> Questions sur les motifs et la connaissance du magasin</p>
+<p class="fact"><b>Fait à relever :</b> Ce que le candidat sait du magasin, motif donné, premier geste prévu à 12 mois.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Cherche un poste, peu importe lequel. Ne connaît ni le groupe ni le magasin.</span></div><div class="a3"><b>3</b><span>Connaît le groupe et le type de magasin. Motif crédible, projet à 12 mois encore flou.</span></div><div class="a5"><b>5</b><span>Connaît le magasin et sa clientèle. Motif précis, projet à 12 mois avec une première action datée.</span></div></div></div></details><h3 class="cat c3">Parcours et potentiel <span>25 points sur 100</span></h3><details class="cr c3"><summary><span class="n">13</span><span class="t">Pertinence de l&#x27;expérience en rayon frais (taille de rayon, volume)</span><span class="w">9 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> CV détaillé et références</p>
+<p class="fact"><b>Fait à relever :</b> Surface, taille de l&#x27;équipe, chiffre d&#x27;affaires et produits du dernier rayon, cohérence avec le CV.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Rayon sec ou très petit rayon. Chiffres flous.</span></div><div class="a3"><b>3</b><span>Rayon frais d&#x27;une taille proche. Chiffres donnés avec hésitation.</span></div><div class="a5"><b>5</b><span>Rayon comparable ou plus grand. Surface, équipe et chiffre d&#x27;affaires donnés sans hésiter, cohérents avec le CV.</span></div></div></div></details>
+<details class="cr c3"><summary><span class="n">14</span><span class="t">Progression de responsabilités dans le parcours</span><span class="w">8 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> CV et références. Les interruptions de carrière ne se pénalisent pas</p>
+<p class="fact"><b>Fait à relever :</b> Responsabilité ajoutée à chaque poste, confirmée par une référence si elle est prise. Une pause de carrière ne se note pas.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Mêmes tâches sur plusieurs postes, sans responsabilité nouvelle.</span></div><div class="a3"><b>3</b><span>Une responsabilité en plus au dernier poste. La reconnaissance par les références n&#x27;est pas encore vérifiée.</span></div><div class="a5"><b>5</b><span>Responsabilités qui grandissent à chaque poste, reconnues par les références.</span></div></div></div></details>
+<details class="cr c3"><summary><span class="n">15</span><span class="t">Capacité d&#x27;apprentissage (nouvel outil, nouvelle règle)</span><span class="w">8 pts</span></summary>
+<div class="body"><p class="meta"><b>Étapes :</b> RH · Directeur · <b>Se vérifie par :</b> Récit d&#x27;un apprentissage récent</p>
+<p class="fact"><b>Fait à relever :</b> Outil ou règle appris récemment, délai pour le maîtriser, façon de le transmettre.</p>
+<div class="anc"><div class="a1"><b>1</b><span>Subit le changement. Aucun exemple récent.</span></div><div class="a3"><b>3</b><span>Cite un apprentissage récent, suivi seul, sans transmission à l&#x27;équipe.</span></div><div class="a5"><b>5</b><span>Apprend vite, transmet à l&#x27;équipe, résultat visible dans le rayon.</span></div></div></div></details>
+</section>
+
+<section id="echelle">
+<h2>L'échelle de notation</h2>
+<div class="scroll"><table><thead><tr><th>Note</th><th>Libellé</th><th>Ce que la note veut dire</th></tr></thead><tbody><tr><td><b>1</b></td><td>Insuffisant</td><td>Ne démontre pas le critère. Aucun fait précis.</td></tr><tr><td><b>2</b></td><td>En dessous des attentes</td><td>Connaît le sujet en théorie, ou un seul exemple partiel.</td></tr><tr><td><b>3</b></td><td>Satisfaisant</td><td>Fait précis et correct, niveau attendu pour le poste.</td></tr><tr><td><b>4</b></td><td>Bon</td><td>Plusieurs faits précis, résultat mesuré.</td></tr><tr><td><b>5</b></td><td>Excellent</td><td>Exemple détaillé, résultat chiffré, a formé ou amélioré la méthode.</td></tr></tbody></table></div>
+<p class="small">Entre deux repères, prends la note la plus basse que les faits justifient. Un 2 ou un 4 se note quand les faits sont entre deux repères.</p>
+</section>
+
+<section id="calcul">
+<h2>Comment la note est calculée</h2>
+<div class="formula"><b>Note retenue d'un critère</b> = moyenne des évaluateurs, puis des étapes où il est prévu.<br><b>Note pondérée sur 100</b> = somme des (note ÷ 5 × poids), soit <code>SUMPRODUCT(poids ; notes) / 5</code>.</div>
+<p><b>Exemple fictif :</b> le critère « Organisation sous pression » pèse 8 points. Aux trois étapes prévues, la note retenue est 3,5 : 3,5 ÷ 5 × 8 = 5,6 points. Le total des 15 lignes donne la note sur 100 (74,5 pour le Candidat A, fictif).</p>
+<div class="box"><b>Seuils (repris de 4.1) :</b> 80 % et plus aligné, le processus continue ; de 60 à 79 % à creuser, on continue avec des réserves ; sous 60 % écart net. Ils se changent dans l'onglet Grille, avant le premier entretien seulement.</div>
+</section>
+
+<section id="elim">
+<h2>Les éliminatoires</h2>
+<div class="scroll"><table><thead><tr><th>Code</th><th>Critère</th><th>Vérification</th></tr></thead><tbody><tr><td><b>É1</b></td><td>Au moins 3 ans en grande distribution, dont du rayon frais</td><td>CV détaillé (enseignes, rayons, durées) et prise de références</td></tr><tr><td><b>É2</b></td><td>Accepte par écrit le régime horaire de la fiche (roulement, week-end une fois sur deux)</td><td>Question fermée dans le formulaire, reprise à l&#x27;entretien RH</td></tr></tbody></table></div>
+<p>Un éliminatoire non tenu ne se compense par aucun score ailleurs. La synthèse l&#x27;affiche, c&#x27;est le recruteur qui confirme. L&#x27;aptitude médicale ne se juge pas en entretien : elle relève de la médecine du travail à l&#x27;embauche.</p>
+</section>
+
+<section id="regles">
+<h2>Règles de l'évaluateur</h2>
+<ol><li>Chaque évaluateur remplit sa feuille seul, avant la mise en commun. Remplie en réunion, elle ne mesure que le premier avis exprimé.</li><li>Chaque note s&#x27;accompagne d&#x27;un fait observé : ce que le candidat a dit ou fait, pas une impression. Sans fait, la feuille affiche « Fait manquant ».</li><li>Un écart de plus de 3 points entre deux évaluateurs sur un critère se discute en séance avant de garder la moyenne : c&#x27;est une information utile.</li><li>Les poids et les seuils se figent avant le premier entretien. Un critère ajouté après avoir vu un candidat va dans la grille du poste suivant.</li><li>Un petit écart entre deux candidats se tranche par un tour de plus ou une prise de références, jamais par la décimale.</li><li>La décision indicative est une aide. Écarter un candidat, ou lui annoncer sa note, se décide par une personne, jamais par la formule.</li><li>Aucun critère ne vise un motif interdit par l&#x27;article 4 du Code du travail ivoirien : sexe, âge, origine, religion, opinion, appartenance syndicale, état de santé, handicap. Une pause dans le parcours ne se pénalise pas.</li></ol>
+</section>
+
+<section id="hyp">
+<h2>Hypothèses (personne n'a répondu)</h2>
+<ol><li>Poste, niveau, 15 critères, poids (100), échelle, seuils (80 % et 60 %) et éliminatoires É1 et É2 : repris de la scorecard 4.1 (chef de rayon produits frais, niveau encadrement). Rien n&#x27;est refait.</li><li>Trois étapes d&#x27;évaluation, reprises du processus de la fiche 4.1 : entretien RH, mise en situation de rayon, entretien avec le directeur de magasin. L&#x27;étude du dossier (étape 1 de la fiche) se fait avant, sur CV, et n&#x27;est pas notée ici.</li><li>Chaque critère est évalué à une ou deux étapes (onglet Grille, colonnes Oui/Non). Ce découpage est une hypothèse de travail à valider avec le manager avant le premier entretien.</li><li>Deux évaluateurs par étape au maximum, désignés « Évaluateur 1 » et « Évaluateur 2 ». Un seul évaluateur : la synthèse fonctionne, la mention « 1 seul » apparaît.</li><li>Note retenue d&#x27;un critère = moyenne des évaluateurs à chaque étape, puis moyenne des étapes où le critère est évalué. Choix de simplicité : aucune étape ne pèse plus qu&#x27;une autre.</li><li>Alerte d&#x27;écart : plus de 3 points entre deux évaluateurs sur un critère. Sur une échelle entière de 1 à 5, seul 1 contre 5 dépasse 3. Le paramètre est modifiable (2 le rend plus sensible).</li></ol>
+</section>
+
+<section id="suite">
+<h2>Suite proposée</h2>
+<ol><li>Guide d&#x27;entretien : les questions et consignes complètes, étape par étape, reliées à ces 15 critères et à leurs ancrages.</li><li>Notation des candidats : saisie des vraies notes pour les candidats retenus. Elle demande ton accord et les vrais comptes rendus d&#x27;entretien, je ne la lance pas seule.</li></ol>
+</section>
+
+<section id="sources">
+<h2>Sources : ce qui est réel, ce qui est fictif</h2>
+<div class="kpis"><div class="k"><b>25</b><span>enseignes</span></div><div class="k"><b>186</b><span>points de vente</span></div><div class="k"><b>+6 451</b><span>collaborateurs</span></div><div class="k"><b>426 Mrd</b><span>FCFA de CA 2025</span></div></div>
+<p class="small">Chiffres réels du groupe : <a href="https://groupeprosuma.com">https://groupeprosuma.com</a>, consulté le 15/10/2026. Ils situent le groupe et ne servent à aucun calcul de la grille.</p>
+<div class="scroll"><table><thead><tr><th>Source</th><th>Lien</th><th>Remarque</th></tr></thead><tbody><tr><td>Scorecard 4.1 (15 critères, poids, échelle, seuils, éliminatoires É1 et É2)</td><td>Fichier local : 4.1/scorecard_chef_de_rayon_frais_prosuma_v1.xlsx</td><td>Document FICTIF de ce test, version 1 du 15/10/2026</td></tr><tr><td>Groupe Prosuma, accueil : 25 enseignes, 186 points de vente, +6 451 collaborateurs, 426 Mrd FCFA de chiffre d&#x27;affaires 2025 ; valeurs et encadrement local</td><td><a href="https://groupeprosuma.com">https://groupeprosuma.com</a></td><td>Chiffres réels, consultés le 15/10/2026</td></tr><tr><td>Code du travail ivoirien, article 4 : non-discrimination à l&#x27;embauchage (loi n° 2015-532 du 20 juillet 2015)</td><td><a href="https://www.economie-ivoirienne.ci/sites/default/files/sites/default/files/inline-files/Loi%20n%C2%B0%202015-532%20du%2020%20juillet%202015%20portant%20code%20du%20Travail.pdf">https://www.economie-ivoirienne.ci/sites/default/files/sites/default/files/inline-files/Loi%20n%C2%B0%202015-532%20du%2020%20juillet%202015%20portant%20code%20du%20Travail.pdf</a></td><td>Texte de loi, consulté le 15/10/2026</td></tr><tr><td>Méthode : compétences d&#x27;Adjoua « grille-evaluation » et « evaluation-candidat » (fait obligatoire, écart de plus de 3 points discuté avant la moyenne, aucune décision automatique)</td><td>Compétences internes</td><td>Version du 14/10/2026 et du 23/09/2026</td></tr>
+<tr><td>Poste, 15 critères et poids, étapes, durées, repères 1/3/5, éliminatoires, seuils, exemples</td><td>-</td><td><b>FICTIF</b></td></tr></tbody></table></div>
+</section>
+
+</div></main>
+<footer><div class="wrap">Page de test FICTIVE préparée pour Groupe Prosuma par Adjoua, Expert recrutement Mstudio, le 15/10/2026. Chiffres du groupe : <a href="https://groupeprosuma.com">groupeprosuma.com</a>. Logo et couleurs (#31348e, #fecc00) pris sur le site du groupe. Page non indexée : ne pas diffuser.</div></footer>
+<script>
+(function(){var a=document.getElementById('sheetlink');var ph='__SHEET'+'_URL__';
+if(a&&(a.getAttribute('href')===ph||a.getAttribute('href').indexOf('SHEET_URL')>-1)){a.style.display='none';document.getElementById('sheetwait').style.display='block';}})();
+</script>
+</body></html>
